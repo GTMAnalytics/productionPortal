@@ -22,6 +22,8 @@
 		}
 		h1 {
 			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
         	}
 		figure {
 	            border-top: 2px solid #000;
@@ -38,44 +40,41 @@
 		    height: auto;
 		    border-top: 1px solid #000;
 	        }
-		.dropdown {
-	            position: absolute;
-	            top: 0;
-	            left: -20px;
-	            display: none;
-        	}
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #f0f0f0;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-			padding: 10px;
-			z-index: 1;
+		.dropdown-icon {
+			cursor: pointer;
+			margin-left: 5px;
 		}
+		.dropdown {
+	            display: none;
+	            position: absolute;
+	            top: 50px;
+	            left: 0;
+	            background-color: #f0f0f0;
+	            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	            padding: 10px;
+	            z-index: 1;
+        	}
 		.dropdown-content a {
 			color: blue;
 			text-decoration: underline;
 			display: block;
 			margin-bottom: 5px;
 			cursor: pointer;
-        }
+		}
 	</style>
 
     </head>
     <body>
 	<div id="sidebar">
-		<div class="dropdown">
-			<span onclick="toggleDropdown()">Sections</span>
-			<div class="dropdown-content" id="dropdownContent">
-				<a onclick="scrollToSection('current')">Current</a>
-			        <a onclick="scrollToSection('yesterday')">Yesterday Final</a>
-			        <a onclick="scrollToSection('office')">Office Totals</a>
-			        <a onclick="scrollToSection('hours')">Hours</a>
-			</div>
+		<div class="dropdown" id="dropdownContent">
+			<a onclick="scrollToSection('current')">Current</a>
+			<a onclick="scrollToSection('yesterday')">Yesterday Final</a>
+			<a onclick="scrollToSection('office')">Office Totals</a>
+			<a onclick="scrollToSection('hours')">Hours</a>
 		</div>
 	</div>
 	<div>
-	        <h1>GTM Production Dashboard</h1>
+	        <h1>GTM Production Dashboard <span class="dropdown-icon" onlick="toggleDropdown()">▼</h1>
 	
 		<figure id="current">
 			<figcaption>Current</figcaption>
