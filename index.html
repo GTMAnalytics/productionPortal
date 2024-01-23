@@ -15,6 +15,11 @@
 	    border: 3px solid #000;
 	    margin: 10px;
 		}
+		#sidebar {
+            flex: 0 0 150px; /* Adjust the width of the sidebar as needed */
+            background-color: #f0f0f0;
+            padding: 10px;
+		}
 		h1 {
             margin-bottom: 20px;
         	}
@@ -24,41 +29,64 @@
             margin: 0px 0;
 	        }
 	        figcaption {
-	            text-align: left;
-		    font-weight: bold;
-		    font-size: 17px;
+	    text-align: left;
+	    font-weight: bold;
+	    font-size: 17px;
 	        }
 	        img {
-	            width: 100%;
-	            height: auto;
-		    border-top: 1px solid #000;
+	    width: 100%;
+	    height: auto;
+	    border-top: 1px solid #000;
 	        }
+		.scroll-link {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        	}
 	</style>
 
     </head>
     <body>
-        <h1>GTM Production Dashboard</h1>
+	<div id="sidebar">
+		<div class="scroll-link" onclick="scrollToSection('current')">Current</div>
+	        <div class="scroll-link" onclick="scrollToSection('yesterday')">Yesterday Final</div>
+	        <div class="scroll-link" onclick="scrollToSection('office')">Office Totals</div>
+	        <div class="scroll-link" onclick="scrollToSection('hours')">Hours</div>
+	</div>
+	<div>
+	        <h1>GTM Production Dashboard</h1>
+	
+		<figure id="current">
+			<figcaption>Current</figcaption>
+			<img src = "time.JPG" alt="Loading Current Image...">
+		</figure>
+			
+		<figure id="yesterday">
+			<figcaption>Yesterday Final</figcaption>
+		        <img src = "Dash.JPG" alt="Loading Final Image...">
+		</figure>
+			
+		<figure id="office">
+			<figcaption>Office Totals</figcaption>
+			<img src = "Roll.JPG" alt="Loading Office Totals Image 1...">
+			<img src = "TPS.JPG" alt="Loading Office Totals Image 2...">
+		</figure>
+			
+		<figure id="hours">
+			<figcaption>Hours</figcaption>
+			<img src = "Hours.JPG" alt="Loading Hours Image...">
+		</figure>
+	   </div>
 
-	<figure>
-		<figcaption>Current</figcaption>
-		<img src = "time.JPG" alt="Loading Current Image...">
-	</figure>
-		
-	<figure>
-		<figcaption>Yesterday Final</figcaption>
-	        <img src = "Dash.JPG" alt="Loading Final Image...">
-	</figure>
-		
-	<figure>
-		<figcaption>Office Totals</figcaption>
-		<img src = "Roll.JPG" alt="Loading Office Totals Image 1...">
-		<img src = "TPS.JPG" alt="Loading Office Totals Image 2...">
-	</figure>
-		
-	<figure>
-		<figcaption>Hours</figcaption>
-		<img src = "Hours.JPG" alt="Loading Hours Image...">
-	</figure>
+	    <script>
+		    function scrollToSection(sectionId) {
+			    var section = document.getElementById(sectionId);
+			    if (section) {
+				    section.scrollIntoView({ behavior: 'smooth' });
+			    }
+		    }
+	    </script>
     </body>
 
 
