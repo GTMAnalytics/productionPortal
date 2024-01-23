@@ -6,12 +6,11 @@
         <title>GTM Dashboard</title>
 	<style>
 		body {
-		    display: inline-block;
+		    display: flex;
 		    max-width: 100%;
 		    font-family: Arial;
-		    text-align: center;
-		    margin-left: auto;
-		    margin-right: auto;
+		    /*margin-left: auto;
+		    margin-right: auto;*/
 		    border: 3px solid #000;
 		    margin: 10px;
 		}
@@ -27,7 +26,7 @@
 		figure {
 	            border-top: 2px solid #000;
 	            padding: 0px;
-	            margin: 0px 0;
+	            margin: 0 0;
 	        }
 	        figcaption {
 		    text-align: left;
@@ -42,12 +41,9 @@
 		.dropdown {
 	            position: absolute;
 	            top: 0;
-	            left: -20px; /* Adjust the position as needed */
+	            left: -20px;
 	            display: none;
         	}
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
 		.dropdown-content {
 			display: none;
 			position: absolute;
@@ -69,7 +65,7 @@
     <body>
 	<div id="sidebar">
 		<div class="dropdown">
-			<span>Sections</span>
+			<span onclick="toggleDropdown()">Sections</span>
 			<div class="dropdown-content" id="dropdownContent">
 				<a onclick="scrollToSection('current')">Current</a>
 			        <a onclick="scrollToSection('yesterday')">Yesterday Final</a>
@@ -104,6 +100,10 @@
 	   </div>
 
 	    <script>
+		    function toggleDropdown() {
+			    var dropdownContent = document.getElementById('dropdownContent');
+			    dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+		    }
 		    function scrollToSection(sectionId) {
 			    var section = document.getElementById(sectionId);
 			    if (section) {
