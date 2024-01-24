@@ -19,10 +19,6 @@
 			display: flex;
 			align-items: center;
         	}
-		h1 span {
-			text-align: left;
-			margin-left: 10 px;
-		}
 		figure {
 			border-top: 2px solid #000;
 			padding: 0px;
@@ -43,6 +39,10 @@
 		.dropdown-icon {
 			cursor: pointer;
 			margin-righ: 5px;
+		}
+		.title-container {
+			text-align: left;
+			margin-left: 10px;
 		}
 		.dropdown {
 			display: none;
@@ -71,8 +71,8 @@
     </head>
     <body>
 	    <h1>
-		    <span class="dropdown-icon" onclick="toggleDropdown()">☰</span>
-		    GTM Production Dashboard
+		    <div class="dropdown-icon" onclick="toggleDropdown()">☰</div>
+		    <span class="title-container">GTM Production Dashboard</span>
 	    </h1>
 	<div id="sidebar">
 		<div class="dropdown" id="dropdownContent">
