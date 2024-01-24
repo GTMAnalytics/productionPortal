@@ -79,7 +79,13 @@
 	            cursor: pointer;
 	            display: none;
 			font-weight: bold;
+			font-size: 16px;
+			color: #000000;
+			transition: color 0.3s;
         	}
+		#scrollToTopBtn:hover {
+			color: #ffffff;
+		}
 	</style>
 
     </head>
@@ -117,7 +123,7 @@
 		<img src = "Hours.JPG" alt="Loading Hours Image...">
 	</figure>
 
-	<button id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+	<button id="scrollToTopBtn" onclick="scrollToTop()">︽</button>
 
 	    <script>
 		    function toggleDropdown(event) {
