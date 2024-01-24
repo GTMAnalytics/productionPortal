@@ -76,7 +76,7 @@
 	    </h1>
 	<div id="sidebar">
 		<div class="dropdown" id="dropdownContent">
-			<a onclick="scrollToSection('current')">Current │ </a>
+			<a onclick="scrollToSection('current')">│ Current │ </a>
 			<a onclick="scrollToSection('yesterday')">Yesterday Final │ </a>
 			<a onclick="scrollToSection('office')">Office Totals │ </a>
 			<a onclick="scrollToSection('hours')">Hours │ </a>
@@ -104,10 +104,18 @@
 	</figure>
 
 	    <script>
-		    function toggleDropdown() {
+		    function toggleDropdown(event) {
 			    var dropdownContent = document.getElementById('dropdownContent');
 			    dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+
+			    event.stopPropagation();
 		    }
+		    function closeDropdown() {
+			    var dropdownContent = document.getElementById('dropdownContent');
+			    dropdownContent.style.display = 'none';
+		    }
+		    document.addEventListener('click', closeDropdown);
+		    
 		    function scrollToSection(sectionId) {
 			    var section = document.getElementById(sectionId);
 			    if (section) {
