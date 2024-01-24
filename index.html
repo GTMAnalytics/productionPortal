@@ -6,20 +6,13 @@
         <title>GTM Dashboard</title>
 	<style>
 		body {
-		    display: flex;
-		    max-width: 100%;
-		    font-family: Arial;
-		    /*margin-left: auto;
-		    margin-right: auto;*/
-		    border: 3px solid #000;
-		    margin: 10px;
+			display: flex;
+			max-width: 100%;
+			font-family: Arial;
+			border: 3px solid #000;
+			margin: 10px;
+			text-align: center;
 		}
-		/*#sidebar {
-			flex: 0 0 50px;
-			background-color: #f0f0f0;
-			padding: 10px;
-			position: relative;
-		}*/
 		h1 {
 			margin-bottom: 0px;
 			display: flex;
@@ -38,25 +31,30 @@
 			padding-left: 3px;
 	        }
 	        img {
-		    width: 100%;
-		    height: auto;
-		    border-top: 1px solid #000;
+			width: 100%;
+			height: auto;
+			border-top: 1px solid #000;
 	        }
 		.dropdown-icon {
 			cursor: pointer;
 			margin-left: 5px;
 		}
 		.dropdown {
-	            display: none;
-	            position: absolute;
-	            top: 50px;
-	            left: 0;
-	            background-color: #f0f0f0;
-	            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	            padding: 10px;
-	            z-index: 1;
+			display: none;
+			position: absolute;
+			top: 50px;
+			left: 0;
+			background-color: #f0f0f0;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			padding: 10px;
+			z-index: 1;
         	}
+		.dropdown-content a:hover {
+			color: #87CEEB;
+			cursor: pointer;
+		}
 		.dropdown-content a {
+			cursor: pointer;
 			color: blue;
 			text-decoration: underline;
 			display: block;
