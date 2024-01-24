@@ -6,7 +6,6 @@
         <title>GTM Dashboard</title>
 	<style>
 		body {
-			display: flex;
 			max-width: 100%;
 			font-family: Arial;
 			border: 3px solid #000;
@@ -14,9 +13,10 @@
 			text-align: center;
 		}
 		h1 {
-			margin-bottom: 0px;
 			display: flex;
+			margin-bottom: 0px;
 			align-items: center;
+			justify-content: center;
         	}
 		figure {
 			border-top: 2px solid #000;
@@ -74,8 +74,7 @@
 		</div>
 	</div>
 	<div>
-	        <h1 style="text-align:center">GTM Production Dashboard </h1>
-		<h1><span class="dropdown-icon" onclick="toggleDropdown()">☰</h1>
+	        <h1>GTM Production Dashboard <span class="dropdown-icon" onclick="toggleDropdown()">☰</span></h1>
 	
 		<figure id="current">
 			<figcaption>Current</figcaption>
