@@ -6,23 +6,19 @@
         <title>GTM Dashboard</title>
 	<style>
 		body {
-			max-width: 100%;
 			font-family: Arial;
 			border: 3px solid #000;
 			margin: 10px;
 			text-align: center;
 			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
+			flex-direction: column;
 			align-items: center;
 		}
 		h1 {
 			margin-bottom: 0px;
-        	}
-		.title-container {
 			display: flex;
 			align-items: center;
-		}
+        	}
 		figure {
 			border-top: 2px solid #000;
 			padding: 0px;
@@ -70,6 +66,10 @@
 
     </head>
     <body>
+	    <h1>
+		    <span class="dropdown-icon" onclick="toggleDropdown()">☰</span>
+		    GTM Production Dashboard
+	    </h1>
 	<div id="sidebar">
 		<div class="dropdown" id="dropdownContent">
 			<a onclick="scrollToSection('current')">Current │ </a>
@@ -77,10 +77,6 @@
 			<a onclick="scrollToSection('office')">Office Totals │ </a>
 			<a onclick="scrollToSection('hours')">Hours │ </a>
 		</div>
-	</div>
-	<div class="title-container">
-		<h1>GTM Production Dashboard</h1>
-		<span class="dropdown-icon" onclick="toggleDropdown()">☰</span>
 	</div>
 	<figure id="current">
 		<figcaption>Current</figcaption>
