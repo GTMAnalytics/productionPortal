@@ -99,10 +99,10 @@
 	    </h1>
 	<div id="sidebar">
 		<div class="dropdown" id="dropdownContent">
-			<a onclick="scrollToSection('current')">│ Current │ </a>
-			<a onclick="scrollToSection('yesterday')">Yesterday Final │ </a>
-			<a onclick="scrollToSection('office')">Office Totals │ </a>
-			<a onclick="scrollToSection('hours')">Hours │ </a>
+			<a href="#" class="dropdown-link" data-section="current">│ Current │ </a>
+		            <a href="#" class="dropdown-link" data-section="yesterday">Yesterday Final │ </a>
+		            <a href="#" class="dropdown-link" data-section="office">Office Totals │ </a>
+		            <a href="#" class="dropdown-link" data-section="hours">Hours │ </a>
 		</div>
 	</div>
 	<figure id="current">
@@ -160,6 +160,15 @@
 				    scrollToTopBtn.style.display = 'none';
 			    }
 		    };
+
+		    var dropdownLinks = document.querySelectorAll('.dropdown-link');
+		    dropdownLinks.forEach(function (link) {
+			    link.addEventListener('click', function (event) {
+				    event.preventDefault();
+				    var sectionId = this.getAttribute('data-section');
+				    scrollToSection(sectionId);
+			    });
+		    });
 	    </script>
     </body>
 
