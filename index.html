@@ -17,6 +17,17 @@
 			flex-direction: column;
 			align-items: center;
 		}
+		.container {
+			border: 3px solid #000;
+			width: 100vw;
+			margin: 10px auto;
+			box-sizing: border-box;
+		}
+		@media (min-width: 990px) {
+			.container {
+				max-width: 90%;
+			}
+		}
 		img {
 			width: 100%;
 			height: auto;
@@ -31,8 +42,6 @@
         	}
 		figure {
 			border-top: 2px solid #000;
-			border-right: 3px solid #000;
-			border-left: 3px solid #000;
 			padding: 0px;
 			margin: 0;
 			width: 100%;
@@ -119,6 +128,7 @@
 
     </head>
     <body>
+	<div class="container">
 	    <h1>
 		    <div class="dropdown-icon" onclick="toggleDropdown(event)">☰</div>
 		    <span class="title-container">GTM Production Dashboard</span>
@@ -165,7 +175,7 @@
 		<figcaption>Hours</figcaption>
 		<img src = "hours.JPG" alt="Loading Hours...">
 	</figure>
-
+</div>
 	<button id="scrollToTopBtn" onclick="scrollToTop()">︽</button>
 
 	    <script>
